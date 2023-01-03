@@ -1,0 +1,240 @@
+<h1>{{Title}}</h1>
+{{#if conocido}}
+<p>Hola {{nombre}} <a href="/salir">Salir</a></p>
+{{/if}}
+
+{{#unless conocido}}
+<p>No te conozco</p>
+<form action="/ingresar" method="post">
+    <input type="text" name="nombre"><button>ingresar</button>
+</form>
+{{/unless}}
+
+<div class="container-fluid">
+    <div id="home" class="row align-items-center hero scroll_selection">
+        <div class="col-lg-3 offset-lg-2">
+            <p>Created by Hiromu Arakawa</p>
+            <h1>Fullmetal Alchemist</h1>
+            <p> “A lesson without pain is meaningless. That’s because no one can gain without sacrificing something.
+                But by enduring that pain and overcoming it, he shall obtain a powerful, unmatched heart… A
+                Fullmetal Heart.
+                ”</p>
+            <p>Edward Elric.</p>
+        </div>
+    </div>
+</div>
+
+<div class="row my-3">
+    <div id="news" class="col-md-5 offset-md-2 scroll_selection">
+        <h2>News</h2>
+        <ul class="lista-novedades">
+            {{#each novedades}}
+            <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#modal{{id}}"><img src="images/novedadesfma.jpg">
+                    {{titulo}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-md-5">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Primera ley de la alquimia de equivalencia de intercambio
+        </button>
+
+        <!-- Modal -->
+        {{#each novedades}}
+        <div class="modal fade" id="modal{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title fs-5" id="exampleModalLabel">{{titulo}}</h2>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h4>{{subtitulo}}</h4>
+                        <p>{{cuerpo}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+
+        <div class="col-md-3 my-3">
+            <div class="rounded py-5 testimonios">
+                <h2 class="text-center">Testimonios Otaku</h2>
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="testimonio">
+                                <h5>Aguante FMA!!!</h5>
+                                <p>Maxi Campeggi.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonio">
+                                <h5>La veria mil veces</h5>
+                                <p>Nicolas Duarte.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="testimonio">
+                                <h5>Mi anime favorito por siempre!</h5>
+                                <p>Maria Tsuruoka.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="historia" class="row align-items-center py-4 scroll_selection">
+    <div class="col-12">
+        <h2 style="text-align: center;">Historia</h2>
+        <p class="wowowo">Edward and Alphonse Elric live in Resembool with their mother Trisha and father Van
+            Hohenheim, the latter
+            having left without reason. Trisha soon dies from an illness. After finishing their alchemy training
+            under Izumi Curtis, the Elrics attempt to bring their mother back with alchemy. But the transmutation
+            backfires, and Edward loses his left leg while Alphonse is completely deconstructed. Edward sacrifices
+            his right arm to retrieve Alphonse's soul, binding it to a suit of armor. Edward is invited by Roy
+            Mustang to become a State Alchemist (to research a way to restore their bodies) and undergoes a painful
+            medical procedure that grants him prosthetic automail limbs. Edward becomes a State Alchemist, with the
+            title of Fullmetal Alchemist. The Elrics spend the next three years searching for the mythical
+            Philosopher's Stone to achieve their goals.</p>
+
+    </div>
+    <div class="wawawa">
+        <div class="col-lg-2 col-md-3 offset-lg-2 d-none d-sm-block">
+            <img src="images/al.gif" alt="historia1" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 d-none d-sm-block">
+            <img src="images/ed.gif" alt="historia2" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 d-none d-sm-block">
+            <img src="images/familiaelric.jpg" alt="historia2" class="img-fluid">
+        </div>
+
+        <div class="col-lg-2 col-md-3 d-none d-sm-block">
+            <img src="images/edyal.jpg" alt="historia2" class="img-fluid">
+        </div>
+        <div class="col-lg-2 col-md-3 d-none d-sm-block">
+            <img src="images/edyal2.jpg" alt="historia2" class="img-fluid">
+        </div>
+
+        <div class="col-12 d-sm-none">
+            <img src="images/historiafma1.jpg" alt="historia3" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<div id="nosotros" class="row align-items-stretch my-3 staff py-4 scroll_selection">
+    <div class="col-lg-8 offset-lg-2">
+        <h2 style="text-align: center;">Nosotros</h2>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="images/edward.jpg" class="card-img-top" alt="Edwardo Elrico">
+                    <div class="card-body">
+                        <h5 class="card-title">Edward Elric</h5>
+                        <p>Main character, fullmetal alchemist. Brave and kind</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/alphonseelric.jpg" class="card-img-top" alt="Alfonso Elrico">
+                    <div class="card-body">
+                        <h5 class="card-title">Alphonse Elric</h5>
+                        <p>Main character, Edward's little brother. Shy and innocent</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/roymustang.png" class="card-img-top" alt="Roy Boy">
+                    <div class="card-body">
+                        <h5 class="card-title">Roy Mustang</h5>
+                        <p>Fire alchemist. ambitious and strong character</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="images/risa.jpg" class="card-img-top" alt="La rubia mas linda">
+                    <div class="card-body">
+                        <h5 class="card-title">Riza Hawkeye</h5>
+                        <p>Roy's second hand. Loyal, serious and straight. Army's best accuracy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="contactanos" class="row py-4 scroll_selection scroll_selection">
+    <div class="col-md-4 offset-md-2">
+        <h2>Visitanos en la torre de Tokyo ٩(◕‿◕｡)۶ (´｡• ω •｡`)</h2>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747975468367!2d139.7432442152152!3d35.65858048019965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2sTokyo%20Tower!5e0!3m2!1sen!2sjp!4v1666967216631!5m2!1sen!2sjp"
+                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div class="col-md-4 mt-4 mt-sm-0">
+        <h2>Contactanos!</h2>
+        <form class="row g-3" action="/" method="post">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+                <label for="apellido" class="form-label">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="col-12">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="JuanPerez@cosito.com" name="email">
+            </div>
+            <div class="col-12">
+                <label for="telefono" class="form-label">Telefono</label>
+                <input type="text" class="form-control" id="telefono" placeholder="Input your telephone number"
+                    name="telefono">
+            </div>
+            <div class="col-md-6">
+                <label for="comentarios" class="form-label">Comentarios</label>
+                <input type="text" class="form-control" id="comentarios" placeholder="Deje su comentario aqui"
+                    name="comentarios">
+            </div>
+
+            <div class="col-12">
+                <button type="submit" class="btn2 btn-primary">Enviar</button>
+            </div>
+        </form>
+        <p>{{message}}</p>
+    </div>
+</div>
